@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.detectorapplication'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.detectorapplication"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        mlModelBinding true
+    }
+}
+
+dependencies {
+//text recog
+//    implementation 'com.google.firebase:firebase-ml-vision:24.1.0'
+////face rec
+//    implementation 'com.google.mlkit:face-detection:16.1.5'
+    implementation 'com.google.mlkit:image-labeling:17.0.7'
+    implementation 'com.google.android.gms:play-services-mlkit-image-labeling:16.0.8'
+        // ...
+        // Use this dependency to use the dynamically downloaded model in Google Play Services
+
+
+//barcode
+    implementation 'com.google.mlkit:barcode-scanning:17.2.0'
+    implementation 'com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0'
+
+
+
+    //addthese
+    implementation 'com.google.android.gms:play-services-vision:20.0.0'
+
+
+
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
+
+
+        // To recognize Latin script
+        implementation 'com.google.mlkit:text-recognition:16.0.0'
+
+        // To recognize Chinese script
+        implementation 'com.google.mlkit:text-recognition-chinese:16.0.0'
+
+        // To recognize Devanagari script
+        implementation 'com.google.mlkit:text-recognition-devanagari:16.0.0'
+
+        // To recognize Japanese script
+        implementation 'com.google.mlkit:text-recognition-japanese:16.0.0'
+
+        // To recognize Korean script
+        implementation 'com.google.mlkit:text-recognition-korean:16.0.0'
+        // To recognize Latin script
+        implementation 'com.google.android.gms:play-services-mlkit-text-recognition:19.0.0'
+
+        // To recognize Chinese script
+        implementation 'com.google.android.gms:play-services-mlkit-text-recognition-chinese:16.0.0'
+
+        // To recognize Devanagari script
+        implementation 'com.google.android.gms:play-services-mlkit-text-recognition-devanagari:16.0.0'
+
+        // To recognize Japanese script
+        implementation 'com.google.android.gms:play-services-mlkit-text-recognition-japanese:16.0.0'
+
+        // To recognize Korean script
+        implementation 'com.google.android.gms:play-services-mlkit-text-recognition-korean:16.0.0'
+
+
+
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
